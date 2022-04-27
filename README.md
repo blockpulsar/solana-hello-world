@@ -19,12 +19,12 @@ Deploy the program with Blockpulsar CI Pipeline as it is described in the offici
 
 
 # Javascript Client
-The Javascript code in the repo interacts with the Blockpulsar Solana Cluster. You need Solana Account's private key dowloaded
-from [app.blockpulsar.com/apps](https://app.blockpulsar.com/apps)
+The Javascript code in the repo interacts with the Blockpulsar Solana Cluster. You need your Solana Account's key pairs dowloaded
+from the website: [app.blockpulsar.com/apps](https://app.blockpulsar.com/apps)
 
 
 ### Run Javascript Client
-Before starting JavaScript Client make sure you have `.env` file copied from the `.env.sample` file, which contains `API_KEY`, `API_SECRET` and
+Before runnint the client make sure you have `.env` file copied from the `.env.sample` file which contains `API_KEY`, `API_SECRET` and
 other options required to run the JavaScript Client.
 ```console
 $ cd client
