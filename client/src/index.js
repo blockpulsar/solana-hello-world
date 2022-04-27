@@ -1,10 +1,12 @@
+require("dotenv").config();
+
 const web3 = require("@solana/web3.js");
 const borsh = require("borsh");
 
 const API_KEY = process.env.API_KEY;
 const API_SECRET = process.env.API_SECRET;
 
-let payerArray = Uint8Array.from([50, 226, 171, 241, 186, 117, 161, 168, 246, 134, 107, 157, 85, 216, 141, 11, 62, 216, 67, 186, 194, 169, 154, 216, 221, 178, 83, 48, 187, 227, 116, 52, 32, 30, 209, 137, 82, 65, 65, 1, 170, 197, 248, 31, 178, 86, 9, 15, 155, 97, 230, 189, 51, 169, 113, 179, 231, 73, 19, 200, 175, 171, 217, 225]);
+let payerArray = Uint8Array.from(require(process.env.ACCOUNT_JSON_FILE));
 const payer = web3.Keypair.fromSecretKey(payerArray);
 
 const programPubKey = new web3.PublicKey(require('../../blockpulsar.json').app_id); // Replace with your own public program id key.
@@ -30,7 +32,7 @@ const GreetingSchema = new Map([
 
 const GREETING_SIZE = borsh.serialize(GreetingSchema, new GreetingAccount()).length;
 
-const connection = new web3.Connection(`https://api.bloclpulsar.com/sol-dev/?key=${API_KEY}&secret=${API_SECRET}`);
+const connection = new web3.Connection(`https://api.blockpulsar.com/sol-dev?key=${API_KEY}&secret=${API_SECRET}`);
 
 async function createAccountWithLamports(lamports = 1000000, ) {
     let account = new web3.Keypair();

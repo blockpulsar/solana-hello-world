@@ -47,6 +47,13 @@ remote: Blockpulsar CI starts build process...
 Interacts with the on-chain program where you need Solana Account private key dowloaded from [app.blockpulsar.com/apps](https://app.blockpulsar.com/apps)
 
 ### Start the client:
+
+Before starting JavaScript client we have to make sure we have `.env` file copied from .env.sample file, which contains API_KEY, API_SECRET and other options
+required to run JavaScript Client.
+
 ```console
+$ cd client
+$ npm i
+$ cd ..
 $ node /client/src/index.js
 ```
