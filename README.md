@@ -1,4 +1,4 @@
-# Minimal Hello World example on Solana Blockchain
+# Minimal Hello World Example on Solana Blockchain
 
 This example is heavily influenced by the official [example-helloworld](https://github.com/solana-labs/example-helloworld),
 but a lot more minimal, in order to be understood as fast as possible.
