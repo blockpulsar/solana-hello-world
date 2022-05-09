@@ -1,0 +1,14 @@
+name: blockpulsar-deploy
+on: [push, pull_request]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configuring Blockpulsar
+        env:
+          API_KEY: ${{ secrets.BLOCKPULSAR_KEY }}
+          API_SECRET: ${{ secrets.BLOCKPULSAR_SECRET }}
+        run: git remote add bp "https://$API_KEY:$API_SECRET@ci.blockpulsar.com/git"
+      - name: Push to Blockpulsar Git
+        run: git push bp master
